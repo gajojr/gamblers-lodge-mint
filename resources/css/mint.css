@@ -1,0 +1,71 @@
+.mint-section {
+    width: 100vw;
+    height: 700px;
+    background-color: #da9232;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mint-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    border: 3px solid black;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.amount {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: row;
+}
+
+.amount > p {
+    font-size: 2.5rem;
+    margin-bottom: 0;
+}
+
+.amount-controls {
+    margin-left: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#decrementAmountBtn, #incrementAmountBtn, #connectWalletBtn, #mintButton {
+    background-color: #000;
+    color: #fff;
+    padding: 0 10px;
+    font-size: 2.5rem;
+    border-radius: 10px;
+}
+
+#amountToMint {
+    margin: 0 15px;
+    font-size: 2rem;
+}
+
+.price {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.price > p {
+    font-size: 2.5rem;
+    margin-bottom: 0;
+} 
+
+#connectWalletBtn, #mintButton {
+    margin-top: 10px;
+}
+
+@media(max-width: 560px) {
+    .mint-panel {
+        width: 94%;
+    }
+}

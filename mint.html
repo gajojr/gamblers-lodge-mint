@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gambler's Lodge</title>
+
+    <!-- Font Awesome CDN -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="resources/css/bootstrap.min.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="resources/css/style.css"/>
+    <link rel="stylesheet" href="resources/css/mint.css"/>
+
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <section id="Header">
+        <div class="header-wrapper">
+            <div class="container">
+                <!-- Navigation Section Start -->
+                <nav>
+                    <div class="logo">
+                        <a href="./index.html">Gambler's Lodge</a>
+                    </div>
+                    <button class="menu-toggler">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <div class="menu">
+                        <ul>
+                            <li>
+                                <a class="login-btn" href="./mint.html"
+                                >MetaMask</a
+                                >
+                            </li>
+                            <li>
+                                <a class="login-btn" href="https://opensea.io"
+                                >Opensea</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <!-- Navigation Section End -->
+            </div>
+        </div>
+    </section>
+    <section class="mint-section">
+        <div class="mint-panel">
+            <h1>Sale is open</h1>
+            <div class="amount">
+                <p>Amount</p>
+                <div class="amount-controls">
+                    <button id="decrementAmountBtn">-</button>
+                    <span id="amountToMint">1</span>
+                    <button id="incrementAmountBtn">+</button>
+                </div>
+            </div>
+            <div class="price">
+                <p>Price of one nft: <span id="priceOfNft"></span>ETH</p>
+                <p>Total price <span id="totalPrice"></span>ETH</p>
+            </div>
+            <button id="connectWalletBtn">Connect wallet</button>
+            <button id="mintButton">Mint</button>
+        </div>
+    </section>
+    <script src="./resources/js/web3-provider.js"></script>
+</body>
+</html>

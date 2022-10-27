@@ -1,0 +1,659 @@
+/* Base Style */
+
+@import url("https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Montserrat:wght@600;700&family=Nunito:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Mochiy Pop One", sans-serif;
+}
+
+a,
+p {
+  font-family: "Nunito", sans-serif;
+}
+
+/* Header Section CSS Start */
+
+.logo a {
+  font-size: 2.8rem;
+  font-weight: 700;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+nav .menu ul {
+  display: flex;
+}
+nav .menu ul li {
+  list-style: none;
+  margin-left: 2.5rem;
+}
+nav .menu ul li a {
+  position: relative;
+  color: #000000;
+  text-decoration: none;
+  text-transform: capitalize;
+  font-size: 1.8rem;
+}
+a.login-btn {
+  background: linear-gradient(360deg, #da9232 3.23%, #e88400 84.64%);
+  color: #fff !important;
+  padding: 0.7rem 2rem;
+  border-radius: 0.5rem;
+}
+
+nav .menu-toggler {
+  background: none;
+  border: none;
+  outline: none;
+  width: 3rem;
+  z-index: 999;
+  display: none;
+}
+nav .menu-toggler span {
+  position: relative;
+  display: block;
+  background: #da9232;
+  height: 0.3rem;
+  margin: 0.7rem 0;
+  border-radius: 1rem;
+}
+/* Responsive CSS for Menu */
+
+@media (max-width: 991px) {
+  .container {
+    display: block;
+    max-width: 100%;
+    margin: auto;
+  }
+  .logo a {
+    font-size: 2.6rem;
+  }
+
+  nav {
+    line-height: 70px;
+  }
+
+  .menu-toggler {
+    display: block !important;
+    margin: 0 2rem;
+  }
+
+  .menu {
+    position: fixed;
+    width: 60%;
+    height: 100vh;
+    background: #ffffff;
+    top: 90px;
+    right: -100%;
+    transition: all 0.4s linear;
+  }
+  nav .menu ul li a {
+    color: #000 !important;
+  }
+  nav .menu a.login-btn {
+    color: #fff !important;
+  }
+  .logo {
+    padding-left: 2rem;
+  }
+
+  .menu ul {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 4rem;
+  }
+  .menu.active {
+    right: 0;
+    z-index: 999;
+  }
+
+  .menu-toggler span {
+    transition: all 0.2s linear;
+  }
+  .menu-toggler.active span:first-child {
+    transform: rotate(-45deg);
+    top: 10px;
+  }
+  .menu-toggler.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggler.active span:last-child {
+    transform: rotate(45deg);
+    bottom: 10px;
+  }
+}
+@media (max-width: 767px) {
+  .logo a {
+    font-size: 2.5rem;
+  }
+}
+
+/* Header Section CSS End */
+
+/* Hero Section CSS Start */
+
+.hero-wrapper {
+  background-image: linear-gradient(
+      0deg,
+      #000000 5.63%,
+      rgba(0, 0, 0, 0) 33.15%
+    ),
+    url(../images/hero-bg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.timer {
+  padding: 29rem 0;
+  text-align: center;
+}
+.timer-title h4 {
+  font-size: 1.6rem;
+  color: #fff;
+  padding: 0 1rem;
+}
+.time h2 {
+  font-size: 6rem;
+  color: #fff;
+}
+
+@media (min-width: 300px) and (max-width: 767px) {
+  .timer {
+    padding: 10rem 0;
+  }
+  .time h2 {
+    font-size: 3rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .timer {
+    padding: 15rem 0;
+  }
+  .time h2 {
+    font-size: 4rem;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .timer {
+    padding: 22rem 0;
+  }
+  .time h2 {
+    font-size: 5rem;
+  }
+}
+@media (min-width: 1400px) {
+  .timer {
+    padding: 32rem 0;
+  }
+  .time h2 {
+    font-size: 6.5rem;
+  }
+}
+@media (min-width: 1800px) {
+  .timer {
+    padding: 43rem 0;
+  }
+  .time h2 {
+    font-size: 7rem;
+  }
+}
+
+/* Hero Section CSS End */
+
+/* Community Section HTML Start */
+
+.community-wrapper {
+  background: url(../images/community-shape.png);
+  background-repeat: no-repeat;
+  background-position-y: bottom;
+}
+.community-content h2 {
+  font-size: 5rem;
+  background: linear-gradient(360deg, #da9232 3.23%, #e4972f 84.64%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.community-content h3 {
+  font-size: 3rem;
+  color: #1d1d1b !important;
+}
+.community-content span {
+  position: relative;
+  font-size: 4rem;
+  color: #1d1d1b !important;
+}
+.community-content span::after {
+  position: absolute;
+  content: "Community";
+  top: 0;
+  left: 0;
+  color: #1d1d1b;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 0.2rem;
+  z-index: -1;
+}
+.community-content p {
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 2.5rem;
+  letter-spacing: -0.055em;
+  color: #000;
+  padding: 2.5rem 0;
+}
+a.button {
+  font-size: 1.6rem;
+  color: #fff;
+  background: linear-gradient(360deg, #da9232 3.23%, #e88400 84.64%);
+  padding: 0.8rem 2rem;
+  border-radius: 0.5rem;
+}
+.community-box {
+  max-width: 65%;
+  background: #1d1d1b;
+  padding: 1rem 8rem;
+  border-radius: 0.5rem;
+}
+.community-item {
+  text-align: center;
+}
+
+.community-item h3 {
+  font-size: 3rem;
+  color: #fff;
+  padding: 1rem 0;
+}
+
+.community-item h6 {
+  font-size: 1.6rem;
+  color: #fff;
+}
+
+@media (min-width: 300px) and (max-width: 767px) {
+  .community-content {
+    padding-top: 5rem;
+  }
+  .community-box {
+    max-width: 100% !important;
+  }
+  .community-content span {
+    font-size: 3rem !important;
+  }
+  .community-content h2 {
+    font-size: 3.5rem !important;
+  }
+  .community-box {
+    display: block !important;
+  }
+  .community-item {
+    padding: 2rem 0;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .community-box {
+    max-width: 85% !important;
+    margin-top: 5rem;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .community-box {
+    max-width: 80% !important;
+    margin-top: 5rem;
+  }
+}
+
+/* Community Section HTML End */
+
+/* Donkeys Island Section HTML Start */
+
+.donkeys {
+  margin-top: 12rem;
+}
+.donkeys-island {
+  background-image: url(../images/island-shape.png);
+  background-repeat: no-repeat;
+  background-position-x: right;
+  background-size: 35rem;
+}
+.shape {
+  position: absolute;
+  top: -15rem;
+  left: 35%;
+  width: 40%;
+}
+.island-content {
+  text-align: right;
+}
+.donkeys-content h3,
+.island-content h3 {
+  font-size: 4rem;
+  color: #1d1d1b;
+}
+.donkeys-content h3 span {
+  font-size: 4rem;
+  color: #1d1d1b;
+  background: linear-gradient(360deg, #da9232 3.23%, #e4972f 84.64%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.island-content h2,
+.donkeys-content h2 {
+  position: relative;
+  font-size: 4rem;
+  color: #1d1d1b;
+}
+.island-content h2::after {
+  position: absolute;
+  content: "Win Big at the";
+  top: -0.3rem;
+  right: 0;
+  color: #1d1d1b;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 0.2rem;
+  z-index: -1;
+}
+.donkeys-content p,
+.island-content p {
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 2.5rem;
+  letter-spacing: -0.055em;
+  padding: 2.5rem 0;
+}
+.island-content p {
+  margin-left: 2rem;
+}
+
+@media (max-width: 768px) {
+  .island-content h2,
+  .donkeys-content h2 {
+    font-size: 3rem;
+  }
+  .donkeys-content h3,
+  .island-content h3 {
+    font-size: 3rem;
+  }
+  .island-content {
+    padding-top: 5rem;
+  }
+}
+
+/* Donkeys Island Section HTML End */
+
+/* Donkeys Web3.0 Section HTML Start */
+
+.donkeys-web3 {
+  background-image: url(../images/web-shape.png);
+  background-repeat: no-repeat;
+  background-position-x: left;
+  background-size: 35rem;
+}
+.donkeys-content h2::after {
+  position: absolute;
+  content: "Gambler's Lodge NFTs";
+  top: -0.3rem;
+  left: 0;
+  color: #1d1d1b;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 0.2rem;
+  z-index: -1;
+}
+@media (max-width: 768px) {
+  .donkeys-content {
+    padding-top: 10rem;
+  }
+  .donkeys-content h3 span {
+    font-size: 3rem;
+  }
+}
+
+/* Donkeys Web3.0 Section HTML End */
+
+/* Lazy Donkeys CSS Start */
+
+.lazy-wrapper {
+  background: linear-gradient(#ffffff00, #da9232 100%);
+}
+.lazy-content h2 {
+  font-size: 4rem;
+  color: #1b1b1d;
+  text-align: center;
+  padding-bottom: 4rem;
+}
+.lazy-content h2 span {
+  background: linear-gradient(360deg, #da9232 3.23%, #e4972f 84.64%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+@media (max-width: 768px) {
+  .lazy-content h2 {
+    font-size: 3rem;
+  }
+}
+
+/* Lazy Donkeys CSS End */
+
+/* Donkeys NFT Section CSS Start */
+
+.nft-wrapper {
+  background: linear-gradient(#fff, #e9ca9f);
+  padding: 10rem 0;
+}
+.nft-img {
+  position: relative;
+  border: 4px solid #000;
+  border-radius: 1rem;
+}
+
+.nft-img::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    0deg,
+    #000000 13.83%,
+    rgba(244, 223, 194, 0.416078) 44.94%,
+    rgba(0, 0, 0, 0.17) 100%
+  );
+  top: 0;
+  left: 0;
+}
+.nft-content {
+  position: absolute;
+  bottom: 2rem;
+  text-align: center;
+}
+
+.nft-content h4 {
+  font-size: 1.6rem;
+  color: #fff;
+  padding: 0 1rem;
+}
+
+@media (min-width: 528px) and (max-width: 767px) {
+  .nft-card {
+    max-width: 80%;
+    margin: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .nft-card {
+    margin-bottom: 5rem;
+  }
+  .nft-content {
+    padding: 0 2rem;
+  }
+}
+
+/* Donkeys NFT Section CSS End */
+
+/* We are coming Section CSS Start */
+
+.coming-wrapper {
+  background: url(../images/coming.png);
+}
+.coming-content h2 {
+  font-size: 4rem;
+  color: #1d1d1b;
+  text-align: center;
+  padding-top: 4rem;
+  padding-bottom: 10rem;
+}
+@media (max-width: 768px) {
+  .coming-content h2 {
+    font-size: 3rem;
+  }
+  .metaverse-box {
+    max-width: 98% !important;
+  }
+  .road-map-content h2 {
+    font-size: 3rem !important;
+    padding: 6rem 0 !important;
+    line-height: 4rem !important;
+  }
+}
+/* We are coming Section CSS End */
+
+/* Roadmap Section CSS Start */
+
+section#Roadmap {
+  position: relative;
+}
+.roadmap-wrapper {
+  background-image: url(../images/roadmap-bg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.metaverse-box {
+  max-width: 50%;
+  margin: auto;
+  background: linear-gradient(360deg, #da9232 3.23%, #e88400 84.64%);
+  padding: 2rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  position: relative;
+  top: -5.5rem;
+}
+.metaverse-box h4 {
+  font-size: 2rem;
+  color: #fff;
+}
+
+.meta-box {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 2rem;
+}
+
+.meta-box li {
+  font-family: "Mochiy Pop One", sans-serif;
+  font-size: 1.6rem;
+  color: #fff;
+}
+.road-map-content h2 {
+  font-size: 4rem;
+  text-align: center;
+  color: #f9ffff;
+  padding: 19rem 0;
+  line-height: 6rem;
+}
+/* Roadmap Section CSS End */
+
+/* Footer Section CSS Start */
+
+footer#Footer {
+  background: #c9ad86;
+  margin-top: -1rem;
+}
+
+.footer-wrapper {
+  background: #1b1b1d;
+  padding-bottom: 2rem;
+}
+.footer-content {
+  text-align: center;
+}
+.footer-content {
+  padding-top: 10rem;
+  padding-bottom: 5rem;
+}
+
+.footer-content h3 {
+  font-size: 3.5rem;
+  color: #fff;
+}
+
+.footer-content p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.6rem;
+  color: #fff;
+  padding: 1rem 0;
+}
+.footer-social a {
+  margin: 0 0.5rem;
+}
+.footer-social a i {
+  width: 4rem;
+  height: 4rem;
+  font-size: 2rem;
+  text-align: center;
+  color: #fff;
+  padding: 1rem 0;
+  border-radius: 5rem;
+  background: linear-gradient(360deg, #da9232 3.23%, #e88400 84.64%);
+}
+@media (max-width: 768px) {
+  .footer-content h3 {
+    font-size: 3rem;
+  }
+}
+
+/* Footer Section CSS End */
