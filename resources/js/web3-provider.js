@@ -773,11 +773,13 @@ const abi = [
 ];
 
 window.addEventListener('DOMContentLoaded', async () => {
+	document.querySelector('.spinner-loader').style.display = 'none';
 	const web3 = new Web3(window.ethereum);
 	const chainId = await web3.eth.net.getId();
 	console.log(chainId);
 
-	if (chainId !== 80001) {
+	// if (chainId !== 80001) {
+	if (chainId !== 137) {
 		// change to 137 for production
 		Swal.fire({
 			title: 'Error!',
@@ -790,7 +792,8 @@ window.addEventListener('DOMContentLoaded', async () => {
 
 	const gamblersLodgeContract = new web3.eth.Contract(
 		abi,
-		polygonTestnetAddress // change to polygonMainnetAddress for production
+		// polygonTestnetAddress // change to polygonMainnetAddress for production
+		polygonMainnetAddress
 	);
 	const costOfNft = await gamblersLodgeContract.methods.cost().call();
 	const maxPerMint = await gamblersLodgeContract.methods.maxMintAmount().call();
@@ -828,7 +831,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 			Swal.fire({
 				title: 'You are not whitelisted',
 				text: 'Whitelist mint is active and you are not on whitelist!',
-				icon: 'error',
+				icon: 'info',
 				confirmButtonText: 'OK',
 			});
 		}
@@ -860,7 +863,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 
 		document.querySelector('.spinner-loader').style.display = 'block';
 
-		const amountToMint = document.getElementById('amountToMint').value;
+		const amountToMint = document.getElementById('amountToMint').innerText;
 
 		try {
 			const gasAmount = await gamblersLodgeContract.methods
