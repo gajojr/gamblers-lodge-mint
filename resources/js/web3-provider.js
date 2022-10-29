@@ -776,14 +776,13 @@ window.addEventListener('DOMContentLoaded', async () => {
 	document.querySelector('.spinner-loader').style.display = 'none';
 	const web3 = new Web3(window.ethereum);
 	const chainId = await web3.eth.net.getId();
-	console.log(chainId);
 
 	// if (chainId !== 80001) {
 	if (chainId !== 137) {
 		// change to 137 for production
 		Swal.fire({
 			title: 'Error!',
-			text: 'Your wallet is not on the mainnet, please switch to mainnet and refresh the page',
+			text: 'Your wallet is not on the mainnet, please switch to polygon mainnet and refresh the page',
 			icon: 'error',
 			confirmButtonText: 'OK',
 		});
@@ -806,6 +805,19 @@ window.addEventListener('DOMContentLoaded', async () => {
 
 	const $connectWalletBtn = document.getElementById('connectWalletBtn');
 	$connectWalletBtn.addEventListener('click', async () => {
+		const chainId = await web3.eth.net.getId();
+
+		// if (chainId !== 80001) {
+		if (chainId !== 137) {
+			// change to 137 for production
+			Swal.fire({
+				title: 'Error!',
+				text: 'Your wallet is not on the mainnet, please switch to polygon mainnet and refresh the page',
+				icon: 'error',
+				confirmButtonText: 'OK',
+			});
+			return;
+		}
 		await window.ethereum.request({ method: 'eth_requestAccounts' });
 
 		const accounts = await web3.eth.getAccounts();
